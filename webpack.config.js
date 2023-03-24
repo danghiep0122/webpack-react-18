@@ -3,6 +3,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { resolve } = require("path");
 
 const isProduction = process.env.NODE_ENV == "production";
 
@@ -32,6 +33,7 @@ const config = {
             {
                 test: /\.(js|jsx)$/i,
                 loader: "babel-loader",
+                exclude: [/node_modules/],
             },
             {
                 test: /\.s[ac]ss$/i,
@@ -54,6 +56,9 @@ const config = {
             // Add your rules for custom modules here
             // Learn more about loaders from https://webpack.js.org/loaders/
         ],
+    },
+    resolve: {
+        extensions: [".js", ".jsx"],
     },
 };
 
