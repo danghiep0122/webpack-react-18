@@ -1,0 +1,245 @@
+.address-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../../assets/img/deep-see.png');
+    background-size: cover;
+    padding: 1.6rem 0;
+}
+
+.buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 622px;
+    position: relative;
+    margin-bottom: -9px;
+    transition: all ease 1s;
+}
+
+.btn {
+    width: 120px;
+    height: 40px;
+    background-color: rgb(255 255 255 / 10%);
+    border: 1px solid #717273;
+    margin: 0 12px;
+    min-width: 100px;
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.btn.active {
+    color: #e31837;
+    background-color: #fdedef;
+    height: 56px;
+    border: none;
+}
+
+.input-wrap-border {
+    border: 1px solid #717273;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+.input-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fdedef;
+    border-radius: 1rem;
+    border: none;
+    position: relative;
+    transition: .1s;
+    padding: 2.24rem 3.2rem;
+}
+
+.input-form {
+    width: 500px;
+    padding: 12px;
+    border: transparent 3px solid;
+    transition: all ease-in .2s;
+    border-top-left-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    caret-color: #e31837;
+    color: rgb(5 1 1 / 86.3%);
+
+    &.no-type {
+        caret-color: transparent;
+    }
+    
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 12px 2px rgb(54 82 204 / 80%)
+    }
+}
+
+// Dropdown section
+
+.dropdown-menu {
+    position: absolute;
+    transform: translateY(60px);
+    width: 86%;
+    border: 1px solid #ccc;
+    border-radius: .8rem;
+    overflow: auto;
+    max-height: 200px;
+    background-color: #fff;
+    box-shadow: #727478 1rem 1rem 10rem;
+    top: 2rem;
+    animation: slide-top-to-bottom .4s ease;
+    z-index: 2;
+}
+
+@keyframes slide-top-to-bottom {
+    0% {
+        opacity: 0;
+        top: -2rem;
+    }
+    
+    100% {
+        opacity: 1;
+        top: 2rem;
+    }
+}
+
+.dropdown-item {
+    padding: 1rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #0078ae;
+        color: #fff;
+    }
+}
+
+.delete-btn {
+    display: flex;
+    position: absolute;
+    right: 7rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.input-wrap input:placeholder-shown ~ .delete-btn {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.submit-btn {
+    background-color: #0078ae;
+    border: none;
+    font-size: 1rem;
+    width: 50px;
+    height: 50px;
+    border-top-right-radius: 8px;
+    transition: all ease-in .2s;
+    cursor: pointer;
+}
+
+.input-form:focus ~ .submit-btn {
+    outline: none;
+    box-shadow: 0 0 12px 2px rgb(54 82 204 / 80%)
+}
+
+// Mobile and Tablet 
+@media screen and (max-width: 767px) {
+    // Address Input Section
+    div.address-input{
+        background-image: none;
+        width: 100%;
+        margin: 6px 0 0;
+    }
+
+    .buttons-wrapper {
+        width: 100%;
+    }
+
+    .input-wrap-border {
+        width: 100%;
+        padding: 0;
+        border: none;
+    }
+
+    .input-wrap {
+        border-radius: 0;
+    }
+}
+
+// Mobile 320 - 575
+@media screen and (max-width: 575px) {
+    .btn {
+        font-size: 0.8rem;
+        color: #000;
+        border: transparent;
+        transform: translateY(-10px);
+
+        &.active {
+            background-color: transparent;
+            border-bottom: #e31837 4px solid;
+            transform: translateY(-10px);
+        }
+    }
+
+    .input-wrap-border {
+        border: none;
+        border-radius: 0;
+        background-color: #fdedef;
+        width: 100%;
+    }
+
+    .input-wrap {
+        min-width: 200px;
+        padding: 32px 0;
+        width: 100%;
+    }
+
+    .input-form {
+        width: 70%;
+    }
+
+    .delete-btn {
+        right: 8rem;
+    }
+}
+
+
+// Tablet 576 - 767
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    // Input Form Section
+    .input-wrap-border {
+        border: 1px solid rgb(0 0 0 / 80%);
+    }
+
+    .input-wrap {
+        padding: 2.4rem;
+        margin: .6rem;
+        border-radius: 1rem;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        color: #000;
+
+        &.active {
+            background-color: #fdedef;
+        }
+    }
+
+    .input-form {
+        width: 90%;
+    }
+}

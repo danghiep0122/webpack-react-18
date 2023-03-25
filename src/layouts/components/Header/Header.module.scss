@@ -1,0 +1,191 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  text-align: center;
+  background-color: #004666;
+  padding: 0 16px;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+}
+
+.navList {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  list-style: none;
+
+  & li {
+    height: 100%;
+    justify-content: center;
+    min-width: 46px;
+    padding: 0 1rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+  }
+
+  & a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.logoAndLanguage {
+  display: flex;
+  height: 100%;
+
+  & a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.navbarPC {
+  display: flex;
+  height: 100%;
+}
+
+.navbarMobile {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  height: 100%;
+
+  & li {
+    padding: .2rem;
+  }
+}
+
+.navList li:hover,
+.buttonPC:hover {
+  cursor: pointer;
+  background-color: #00628f;
+}
+
+.languageSwitch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 70px;
+  margin-left: 10px;
+
+  & .languageFlag {
+    cursor: pointer;
+    width: 32px;
+    height: 16px;
+  }
+}
+
+.navbarButtonPC {
+  display: flex;
+  margin: 0 .6rem;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+  & .buttonPC {
+    display: flex;
+    align-items: center;
+    padding: .6rem;
+    height: 100%;
+  }
+}
+
+.cartNoti {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #fff;
+  background-color: rgb(170 25 52);
+  border-radius: 4px;
+}
+
+// Mobile
+@media only screen and (max-width: 575px) {
+  .navbar {
+    height: 48px;
+    padding: 0 .4rem;
+  }
+
+  .dominoLogoNoText {
+    display: block;
+    margin: 0 .4rem;
+  }
+
+  .dominoLogo,
+  .dominoLogoPc,
+  .navbarPC {
+    display: none;
+  }
+}
+
+// Tablet
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .navbar {
+    height: 80px;
+  }
+
+  .dominoLogoNoText {
+    display: block;
+    margin: 1rem;
+    cursor: pointer;
+  }
+
+  .navbarPC,
+  .navList {
+    flex-grow: 1;
+  }
+
+  .navbarPC li {
+    padding: 0 10px;
+  }
+
+  .dominoLogo,
+  .dominoLogoPc,
+  .navbarSmall,
+  .navbarMobile,
+  .languageSwitch {
+    display: none;
+  }
+}
+
+// PC and bigger
+@media only screen and (min-width: 768px) {
+  .navbar {
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+  }
+
+  .dominoLogoPc {
+    display: block;
+  }
+
+  .navbarPC,
+  .navList {
+    flex-grow: 1;
+  }
+
+  .dominoLogo,
+  .dominoLogoNoText,
+  .navbarMobile {
+    display: none;
+  }
+}

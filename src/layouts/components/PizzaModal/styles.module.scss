@@ -1,0 +1,269 @@
+.modalFadeOutside {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0; 
+    left: 0;
+    background-color: #717273;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    opacity: .6;
+}
+
+.modalWrapper {
+    overflow: hidden;
+    display: flex;
+    position: fixed;
+    background-color: #fff;
+    height: 90vh;
+    width: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    animation: slide-top-to-bottom .5s ease-out;
+    border-radius: .64rem;
+}
+
+@keyframes slide-top-to-bottom {
+    0% {
+        transform: translate(-50%, -100%);
+    }
+
+    100% {
+        transform: translateY(-50%, -50%)
+    }
+}
+
+.offModalButton {
+    position: fixed;
+    top: 0;
+    right: 0;
+    border: none;
+    cursor: pointer;
+    width: 42px;
+    height: 42px;
+    background-color: #e31837;
+}
+
+.imageWrapper {
+    width: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.pizzaImage {
+    transform: scale(1.4);
+}
+
+.modalContent {
+    position: relative;
+    width: 500px;
+    overflow: auto;
+}
+
+.modalProductDescrWrapper {
+    box-sizing: border-box;
+    overflow: auto;
+    flex: 1;
+    margin: 20px 20px 80px;
+}
+
+.productTitle {
+    margin: 0 26px 20px 0;
+    font-size: 2.2rem;
+    color: #0078AE;
+}
+
+.modalTitleSeperate {
+    margin: 20px 0;
+}
+
+.productDescr {
+    background-color: transparent;
+}
+
+.inputScale {
+    cursor: pointer;
+    transform: scale(1.6);
+    margin-right: 20px;
+}
+
+.cartItemsQty {
+    border-radius: 0.4rem;
+    overflow: hidden;
+
+    & button, input {
+        border: none;
+        height: 50px;
+        width: 52px;
+        margin-right: 1px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.4rem;
+        letter-spacing: -2px;
+        outline: 1px transparent solid;
+        background-color: #E9ECEF;
+        cursor: pointer;
+    }
+
+    & input:focus {
+        outline: #e31837 1px solid;
+    }
+}
+
+.productDescrSection {
+    padding: 10px 20px;
+
+    & h3 {
+        padding-top: 10px;
+    }
+
+    & ul {
+        padding: 16px;
+        list-style: none;
+    }
+
+    & li {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        font-size: 1.2rem;
+        font-weight: 500;
+
+        & label {
+            cursor: pointer;
+            margin-left: 16px;
+        }
+    }
+
+    & hr {
+        border: 1px solid rgb(114 116 120 / 20%);
+    }
+}
+
+.productDescrIcon {
+    height: 2.4rem;
+    width: 2.4rem;
+    overflow: hidden;
+
+    & img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.addToCartSection {
+    box-shadow: 0 -2px 6px #666;
+    box-sizing: border-box;
+    position: fixed;
+    width: 500px;
+    background-color: #fff;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.minusButtonDisable {
+    opacity: 0.6;
+    user-select: none;
+    cursor: auto;
+}
+
+.addToCartButton {
+    display: block;
+    height: 50px;
+    background-color: #e31837;
+    color: #fff;
+    flex: 1;
+    margin: 0 10px;
+    border-radius: .4rem;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    .modalWrapper {
+        flex-direction: column;
+        width: 94vw;
+        margin: 0;
+        height: 80vh;
+    }
+
+    .modalProductDescrWrapper {
+        margin: .4rem;
+    }
+
+    .imageWrapper, .imageWrapper img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .modalTitleSeperate {
+        margin: 1rem 0;
+        width: 16vw;
+        border-bottom: 1px #727478 solid;
+    }
+
+    .modalContent {
+        width: 100%;
+        margin-bottom: 8rem;
+    }
+
+    h2.productTitle {
+        margin: 0;
+        font-weight: 500;
+    }
+
+    .productDescrSection {
+        padding: 0;
+
+        & ul {
+            padding: 0;
+        }
+
+        & div {
+            font-size: 1rem;
+        }
+    }
+
+    .addToCartSection {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cartItemsQty input, 
+    .cartItemsQty button {
+        font-size: 1rem;
+    }
+
+
+    .addToCartButton {
+        width: 100%;
+        padding: .8rem;
+        font-size: 1rem;
+        margin-top: .4rem;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 800px) {
+    .modalWrapper {
+        height: 90vh;
+        width: 80vw;
+    }
+
+    .productDescrSection {
+        padding: 1rem;
+
+        & div {
+            font-size: 1.2rem;
+        }
+    }
+}

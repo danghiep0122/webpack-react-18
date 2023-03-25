@@ -1,0 +1,228 @@
+footer {
+  display: flex;
+  background-color: #00628f;
+  z-index: 1;
+}
+
+.footerSocial {
+  display: flex;
+  justify-content: center;
+  margin: 0 20px 0 0;
+  border-bottom: 1px solid #004666;
+}
+
+.footerConnect {
+  display: flex;
+  justify-content: baseline;
+  padding-bottom: 8px;
+  font-size: small;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 1rem;
+
+  & p {
+    margin: .4rem .2rem;
+  }
+
+}
+
+.footerConnectIcons {
+  display: flex;
+  align-items: baseline;
+  margin: 0;
+}
+
+.connectIcon {
+  margin: 0 .4rem;
+  cursor: pointer;
+}
+
+.footerMobile {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.footerMain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dominoIconBig {
+  margin: 1.6rem;
+}
+
+.hotlineText {
+  margin: 6px;
+  font-style: italic;
+  font-weight: 600;
+  color: #fff;
+}
+
+.credentialsImg {
+  width: 105px;
+  height: 22px;
+}
+
+.hotlineWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hotlineNumber a {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 44px;
+  color: #ffc107;
+  text-decoration: none;
+}
+
+.groupNavForPC {
+  display: flex;
+  justify-content: center;
+
+  & ul {
+    padding: 8px;
+    margin: 0;
+  }
+
+  & li,
+  a {
+    padding: 4px 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: #bcc1cb;
+    text-decoration: none;
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      color: #9199aa;
+    }
+  }
+}
+
+.footerEnd {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+
+}
+
+.footerEndText,
+.privacy {
+  display: flex;
+  margin-left: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #0ca3ea;
+}
+
+.language {
+  margin: 4px 0 0 4px;
+}
+
+.languageFlag {
+  margin: 0 2px;
+}
+
+.languageChange {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 170px;
+  height: 36px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #fff;
+  cursor: pointer;
+  background-color: #0078ae;
+  border-radius: 4px;
+}
+
+// Mobile
+@media only screen and (max-width: 575px) {
+  .footerSocial,
+  .groupNavForPC,
+  .paymentMethod,
+  .languageChange,
+  .dominoIconBig,
+  .privacy {
+    display: none;
+  }
+
+  .footerMain {
+    padding-top: 30px;
+  }
+
+  .footerEnd {
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 30px;
+  }
+}
+
+// Tablet
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .language,
+  .groupNavForPC {
+    display: none;
+  }
+
+  .takeTheSpace {
+    flex-grow: 1;
+  }
+
+  .footerSocial {
+    justify-content: flex-end;
+    margin: 10px 50px 0;
+  }
+
+  .footerMain {
+    justify-content: flex-start;
+    margin: 10px 50px 0;
+  }
+
+  .footerConnect {
+    display: flex;
+    align-content: flex-end;
+  }
+
+  .footerHotline {
+    padding: 24px 0 24px 24px;
+    border-left: 1px solid #004666;
+  }
+}
+
+// PC and bigger
+@media only screen and (min-width: 768px) {
+  .language,
+  .takeTheSpace {
+    display: none;
+  }
+
+  .footerMobile {
+    max-width: 1140px;
+  }
+
+  .footerHotline {
+    padding: 24px 0 24px 24px;
+    border-left: 1px solid #004666;
+  }
+
+  .footerSocial,
+  .footerMain {
+    justify-content: flex-end;
+    margin: 10px 10px 0;
+  }
+
+  .groupNavForPC {
+    flex-grow: 1;
+  }
+}

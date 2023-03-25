@@ -1,0 +1,142 @@
+div.call-me-btn {
+    position: fixed;
+    right: 2rem;
+    bottom: 3rem;
+    z-index: 11;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: big-scale 3s ease-in-out infinite ;
+}
+
+@keyframes big-scale {
+    0% {
+     transform: scale(50%);   
+    }
+
+    50% {
+     transform: scale(60%);   
+    }
+
+    100% {
+     transform: scale(50%);   
+    }
+}
+
+div.outer-bubble {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+    background-color: rgb(255 255 255 / 50%);
+}
+
+button.phone-tel {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+    border: none;  
+    background-color: #e31837;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+button.phone-tel::before {
+    z-index: 0;
+    display: block;
+    content: "";
+    background-color: rgb(0 0 0 / 40%);
+    height: 2.8rem;
+    width: 3rem;
+    border-radius: 50%;
+    animation: outer-scale ease-in 3s infinite;
+}
+
+@keyframes outer-scale {
+    0% {
+        opacity: 0
+    }
+
+    60% {
+        opacity: .4;
+    }
+
+    80% {
+        background-color: rgb(0 0 0 / 31.5%);
+        transform: scale(4);
+    }
+
+    81%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+.phone-tel a {
+    z-index: 2;
+    position: absolute;
+    animation: moving 3s linear infinite; 
+}
+
+@keyframes moving {
+    0% {left: 1.3rem;}
+    1% {left: 1rem;}
+    2% {left: 1.3rem;}
+    3% {left: 1.6rem;}
+    4% {left: 1.3rem;}
+    5% {left: 1rem;}
+    6% {left: 1.3rem;}
+    7% {left: 1.6rem;}
+    8% {left: 1.3rem;}
+    9% {left: 1rem;}
+    10% {left: 1.3rem;}
+    11% {left: 1.6rem;}
+    12% {left: 1.3rem;}
+    13% {left: 1rem;}
+    14% {left: 1.3rem;}
+    15% {left: 1.6rem;}
+    16%{left: 1.3rem;}
+    100% {left: 1.3rem;}
+}
+
+div.inner-bubble {
+    position: absolute;
+    border-radius: 50%;
+    animation: inner-scale 3s ease-in infinite;
+}
+
+@keyframes inner-scale {
+    0% {
+        height: 0;
+        width: 0;
+    }
+
+    30% {
+        height: 4.5rem;
+        width: 4.5rem;
+        background-color: #fff;
+    }
+
+    31%{
+       opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+// Disappear on PC and bigger
+@media screen and (min-width: 768px) {
+    div.call-me-btn {
+        display: none;
+    }
+}
